@@ -245,6 +245,10 @@ void R2Sounds::speak(int mp3File) {
 R2Sounds r2_Voice; 
 
 void setup() {
+  // Prepare random seed
+  Serial.begin (9600);
+  randomSeed(analogRead(0));  
+  
   pinMode(LED_BUILTIN, OUTPUT); // arduino internal LED
 #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
   clock_prescale_set(clock_div_1);
@@ -262,7 +266,6 @@ void setup() {
   headServo.idle();
 
   // *** repare Sound ***
-  Serial.begin (9600);
   R2Serial.begin (9600);
   mp3_set_serial (R2Serial);  //set softwareSerial for DFPlayer-mini mp3 module 
   delay(5);  //wait 1/5ms for mp3 module to set volume
