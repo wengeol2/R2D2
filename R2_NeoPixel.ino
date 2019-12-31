@@ -279,12 +279,13 @@ void loop() {
   
   // *** set Top Front Logic Display to a random red or blue tone and fade to it in random duration
   if (!r2_Logic1.running) {
-    // fade to a shade of blue or white
     if(random(2) == 1) {
+      // fade to a shade of blue or white
       r2_Logic1.blueTarget = random(255);
       r2_Logic1.redTarget = random (r2_Logic1.blueTarget);
       r2_Logic1.greenTarget = r2_Logic1.redTarget;
     } else {
+      // fade to a shade of red or white
       r2_Logic1.redTarget = random(255);
       r2_Logic1.blueTarget = random (r2_Logic1.redTarget);
       r2_Logic1.greenTarget = r2_Logic1.blueTarget;
@@ -295,12 +296,13 @@ void loop() {
 
   // *** set Bottom Fromt Logic Display to a random red or blue tone and fade to it in random duration
   if (!r2_Logic2.running) {
-    // fade to a shade of blue or white
     if(random(2) == 1) {
+      // fade to a shade of blue or white
       r2_Logic2.blueTarget = random(255);
       r2_Logic2.redTarget = random (r2_Logic2.blueTarget);
       r2_Logic2.greenTarget = r2_Logic2.redTarget;
     } else {
+      // fade to a shade of red or white
       r2_Logic2.redTarget = random(255);
       r2_Logic2.blueTarget = random (r2_Logic2.redTarget);
       r2_Logic2.greenTarget = r2_Logic2.blueTarget;
@@ -319,7 +321,7 @@ void loop() {
 
   // *** set Rear PSI to a random hue, saruration and brightness and hsv-fade to it in random duration
   if(!r2_RearPSI.running) {
-    long targetHue = 9000 + random(11000); // hue range from cyan to red
+    long targetHue = 9000 + random(11000); // hue range from yellow to green
     r2_RearPSI.setColorTargetHSV(targetHue,random(128)+128,random(128)+128);
     r2_RearPSI.duration = random(2048);
   }
